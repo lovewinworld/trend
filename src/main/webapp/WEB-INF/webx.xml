@@ -67,6 +67,8 @@
                 <match name="*" store="temporaryCookie" />
             </store-mappings>
         </session>
+        <!-- URL 重写 -->
+        
     </services:request-contexts>
 
     <!-- 支持上传文件。 -->
@@ -83,8 +85,10 @@
     <!-- 装载模块。 -->
     <services:module-loader>
         <ml-factories:class-modules>
-            <ml-factories:search-packages type="$1" packages="net.nima.trend.common.module.*" />
+            <ml-factories:search-packages type="$1" packages="net.nima.trend.home.module.*" />
         </ml-factories:class-modules>
     </services:module-loader>
 
+	<beans:import resource="classpath:/biz/biz-ao.xml" />
+	<beans:import resource="classpath:/ContextAOP.xml"/>
 </beans:beans>
